@@ -42,3 +42,30 @@ for (let i = 0; i < starCount; i++) {
   star.style.animationDelay = Math.random() * 5 + "s";
   document.getElementById("starbg").appendChild(star);
 }
+
+// Get all the tab content elements
+var tabContents = document.getElementsByClassName("tabcontent");
+
+// Get all the tab button elements
+var tabButtons = document.getElementsByClassName("tablinks");
+
+// Function to open a tab
+function openTab(event, tabName) {
+  // Hide all the tab content
+  for (var i = 0; i < tabContents.length; i++) {
+    tabContents[i].style.display = "none";
+  }
+
+  // Remove the "active" class from all the tab buttons
+  for (var i = 0; i < tabButtons.length; i++) {
+    tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+  }
+
+  // Show the selected tab content and set the button to be "active"
+  document.getElementById(tabName).style.display = "block";
+  event.currentTarget.className += " active";
+}
+
+// Set the first tab to be active by default
+document.getElementById("Tab1").style.display = "block";
+tabButtons[0].className += " active";
