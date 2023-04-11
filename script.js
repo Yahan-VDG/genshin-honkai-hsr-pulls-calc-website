@@ -64,6 +64,8 @@ function openTab(event, tabName) {
   // Show the selected tab content and set the button to be "active"
   document.getElementById(tabName).style.display = "block";
   event.currentTarget.className += " active";
+
+  document.getElementById("start").style.display = "none";
 }
 
 // Set the first tab to be active by default
